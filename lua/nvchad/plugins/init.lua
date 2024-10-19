@@ -17,8 +17,8 @@ return {
   },
 
   "nvchad/volt",
-  "nvchad/minty",
   "nvchad/menu",
+  { "nvchad/minty", cmd = { "Huefy", "Shades" } },
 
   {
     "nvim-tree/nvim-web-devicons",
