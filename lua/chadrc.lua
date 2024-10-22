@@ -14,4 +14,8 @@ M.base46 = {
 	-- },
 }
 
+local other_config = require('nvchad.chadrc')
+for key, value in pairs(other_config) do
+	M[key] = value
+end
 return M
