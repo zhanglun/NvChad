@@ -12,8 +12,10 @@ local options = {
   },
 
   mapping = {
-    ["<C-p>"] = cmp.mapping.select_prev_item(),
-    ["<C-n>"] = cmp.mapping.select_next_item(),
+    -- ["<C-p>"] = cmp.mapping.select_prev_item(),
+    -- ["<C-n>"] = cmp.mapping.select_next_item(),
+    ["<Up>"] = cmp.mapping.select_prev_item(),
+    ["<Down>"] = cmp.mapping.select_next_item(),
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
@@ -24,7 +26,7 @@ local options = {
       select = true,
     },
 
-    ["<Tab>"] = cmp.mapping(function(fallback)
+    ["<Enter>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif require("luasnip").expand_or_jumpable() then
