@@ -25,3 +25,5 @@ autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
     end
   end,
 })
+
+vim.cmd.colorscheme("monokai-pro")

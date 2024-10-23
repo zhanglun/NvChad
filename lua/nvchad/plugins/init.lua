@@ -195,5 +195,11 @@ return {
     'mrcjkb/rustaceanvim',
     version = '^5', -- Recommended
     lazy = false,   -- This plugin is already lazy
+  },
+  {
+    "loctvl842/monokai-pro.nvim",
+    config = function()
+      require "nvchad.configs.monokai-pro"
+    end
   }
 }
