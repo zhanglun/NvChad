@@ -210,5 +210,18 @@ return {
     config = function()
       require "nvchad.configs.monokai-pro"
     end
+  },
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    cmd = { "Barbecue" },
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    opts = {
+      -- configurations go here
+    },
   }
 }

@@ -14,7 +14,7 @@ map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
-map("n", "<C-s>", "<cmd>w<CR>", { desc = "general save file" })
+map({ "i", "n" }, "<C-s>", "<cmd>w<CR>", { desc = "general save file" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
 
 map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
@@ -105,3 +105,4 @@ map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
 map("n", "<leader>wk", function()
   vim.cmd("WhichKey " .. vim.fn.input "WhichKey: ")
 end, { desc = "whichkey query lookup" })
+
