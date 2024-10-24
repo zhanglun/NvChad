@@ -69,8 +69,15 @@ return {
   {
     "stevearc/conform.nvim",
     opts = require "configs.conform",
+    config = function(_, opts)
+      require("conform").setup(opts)
+    end,
   },
 
+  {
+    "prettier/vim-prettier",
+
+  },
   -- git stuff
   {
     "lewis6991/gitsigns.nvim",
@@ -191,11 +198,13 @@ return {
       vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
     end
   },
+
   {
     'mrcjkb/rustaceanvim',
     version = '^5', -- Recommended
     lazy = false,   -- This plugin is already lazy
   },
+  
   {
     "loctvl842/monokai-pro.nvim",
     config = function()
