@@ -4,7 +4,7 @@ if not present then
   return
 end
 
-require("base46").load_highlight "alpha"
+-- require("base46").load_all_highlight "alpha"
 
 local function button(sc, txt, keybind)
   local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
@@ -51,7 +51,7 @@ local options = {
       -- "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
       -- "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
       -- "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
-      -- "                                                     ",
+      "                                                     ",
       " █████╗ ███╗   ██╗ ██████╗ ████████╗██╗  ██╗███████╗██████╗      ██████╗ ██████╗ ███████╗ █████╗ ████████╗    ██████╗  █████╗ ██╗   ██╗ ",
       " ██╔══██╗████╗  ██║██╔═══██╗╚══██╔══╝██║  ██║██╔════╝██╔══██╗    ██╔════╝ ██╔══██╗██╔════╝██╔══██╗╚══██╔══╝    ██╔══██╗██╔══██╗╚██╗ ██╔╝ ",
       " ███████║██╔██╗ ██║██║   ██║   ██║   ███████║█████╗  ██████╔╝    ██║  ███╗██████╔╝█████╗  ███████║   ██║       ██║  ██║███████║ ╚████╔╝  ",
@@ -73,6 +73,7 @@ local options = {
       button("SPC f w", "  Find Word  ", ":Telescope live_grep<CR>"),
       button("SPC b m", "  Bookmarks  ", ":Telescope marks<CR>"),
       button("SPC t h", "  Themes  ", ":Telescope themes<CR>"),
+      button("SPC c h", "  Keymaps  ", ":Telescope keymaps<CR>"),
       button("SPC e s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
     },
     opts = {

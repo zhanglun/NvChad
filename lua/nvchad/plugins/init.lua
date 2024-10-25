@@ -40,7 +40,8 @@ return {
 
       local hooks = require "ibl.hooks"
       hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
-      require("ibl").setup(opts)
+      -- require("ibl").setup(opts)
+      require("ibl").setup()
 
       dofile(vim.g.base46_cache .. "blankline")
     end,
@@ -173,16 +174,11 @@ return {
   },
   {
     "goolord/alpha-nvim",
+    event = 'VimEnter',
     -- dependencies = { 'echasnovski/mini.icons' },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
-      local startify = require("alpha.themes.startify")
-      -- available: devicons, mini, default is mini
-      -- if provider not loaded and enabled is true, it will try to use another provider
-      startify.file_icons.provider = "devicons"
-      require("alpha").setup(
-        startify.config
-      )
+      require("nvchad.configs.alpha")
     end,
   },
   {
@@ -204,15 +200,10 @@ return {
     version = '^5', -- Recommended
     lazy = false,   -- This plugin is already lazy
   },
-  
-  {
-    "loctvl842/monokai-pro.nvim",
-    config = function()
-      require "nvchad.configs.monokai-pro"
-    end
-  },
+
   {
     "utilyre/barbecue.nvim",
+    event = 'VimEnter',
     name = "barbecue",
     version = "*",
     cmd = { "Barbecue" },
@@ -222,6 +213,10 @@ return {
     },
     opts = {
       -- configurations go here
+      theme = 'monokai-pro'
     },
+  },
+  {
+    "sindrets/diffview.nvim"
   }
 }
