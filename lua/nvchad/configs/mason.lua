@@ -11,5 +11,6 @@ return {
     },
   },
 
+  ensure_installed = { "gitui" },
   max_concurrent_installers = 10,
 }

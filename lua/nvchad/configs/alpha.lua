@@ -16,7 +16,7 @@ local function button(sc, txt, keybind)
     cursor = 5,
     width = 36,
     align_shortcut = "right",
-    hl = "AlphaButtons",
+    hl = "AlphaButton",
   }
 
   if keybind then
@@ -75,6 +75,19 @@ local options = {
       button("SPC t h", "  Themes  ", ":Telescope themes<CR>"),
       button("SPC c h", "  Keymaps  ", ":Telescope keymaps<CR>"),
       button("SPC e s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
+      -- { txt = "─", hl = "NvDashLazy", no_gap = true, rep = true },
+
+      {
+        txt = function()
+          local stats = require("lazy").stats()
+          local ms = math.floor(stats.startuptime) .. " ms"
+          return "  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms
+        end,
+        -- hl = "NvDashLazy",
+        no_gap = true,
+      },
+
+      -- { txt = "─", hl = "NvDashLazy", no_gap = true, rep = true },
     },
     opts = {
       spacing = 1,
